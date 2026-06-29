@@ -25,6 +25,12 @@ func (repo *MemoriaLibroRepo) HandlerCrear(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
+	if err := repo.ValidarDatosVacios(nuevoLibro); err != nil {
+		res := map[string]string{"Error": err.Error()}
+		response.ResponderJSON(w, http.StatusBadRequest, res)
+		return
+	}
+
 	if err := repo.ValidarLibro(nuevoLibro.Titulo, nuevoLibro.Autor); err != nil {
 		res := map[string]string{"Error": "El libro ya existe"}
 		response.ResponderJSON(w, http.StatusBadRequest, res)

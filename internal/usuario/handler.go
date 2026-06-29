@@ -19,7 +19,7 @@ func (repo *MemoriaUsuarioRepo) HandlerCrear(w http.ResponseWriter, r *http.Requ
 	}
 
 	if err := repo.ValidarUsuario(nuevoUsuario); err != nil {
-		res := map[string]string{"Error": "El usuario ya existe", "Email ya registrado": nuevoUsuario.Email}
+		res := map[string]string{"Error": err.Error()}
 		response.ResponderJSON(w, http.StatusBadRequest, res)
 		return
 	}

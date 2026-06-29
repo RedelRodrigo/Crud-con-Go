@@ -2,6 +2,7 @@ package main
 
 import (
 	"biblioteca/internal/trasport/routers"
+	"biblioteca/pkg/middleware"
 	"fmt"
 	"net/http"
 )
@@ -13,7 +14,7 @@ func main() {
 	routers.Usuario(mux)
 
 	fmt.Printf("Servidor corriendo en el http://localhost:8080 \n")
-	err := http.ListenAndServe(":8080", mux)
+	err := http.ListenAndServe(":8080", middleware.Logging(mux))
 	if err != nil {
 		return
 	}

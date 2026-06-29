@@ -91,3 +91,13 @@ func (repo *MemoriaLibroRepo) ValidarLibro(titulo string, autor string) error {
 	}
 	return nil
 }
+
+func (repo *MemoriaLibroRepo) ValidarDatosVacios(libro Libro) error {
+	if strings.TrimSpace(libro.Titulo) == "" || strings.TrimSpace(libro.Autor) == "" {
+		return errors.New("El titulo o el autor no pueden estar vacios!")
+	}
+	if libro.Paginas <= 0 {
+		return errors.New("Las paginas del libro deben ser mayores a 0")
+	}
+	return nil
+}

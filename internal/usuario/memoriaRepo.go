@@ -110,6 +110,14 @@ func (repo *MemoriaUsuarioRepo) ValidarUsuario(usuario Usuario) error {
 			return errors.New("Este email ya esta registrado!")
 		}
 	}
+	if strings.TrimSpace(usuario.Email) == "" {
+		return errors.New("El email no debe estar vacio")
+	}
+	if strings.TrimSpace(usuario.Apellido) == "" {
+		return errors.New("El apellido no debe estar vacio")
+	}
+	if strings.TrimSpace(usuario.Nombre) == "" {
+		return errors.New("El nombre no debe estar vacio")
+	}
 	return nil
-
 }
