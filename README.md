@@ -37,12 +37,18 @@ Ejecutar la aplicación:Bash
 go run main.go
 
 La API estará disponible en http://localhost:8080.📡 Endpoints PrincipalesMétodoEndpointDescripción
-GET/api/librosObtiene todos los libros
-GET/api/libros/{id}Obtiene un libro por su ID
-POST/api/librosCrea un nuevo registro de libro
-PUT/api/libros/{id}Actualiza la información de un libro
-DELETE/api/libros/{id}Elimina un libro del catálogo💡 
-Ejemplos de PeticionesCrear un libro (POST /api/libros)
+GET/api/librosObtiene todos los libros.
+
+GET/api/libros/{id}Obtiene un libro por su ID.
+
+POST/api/librosCrea un nuevo registro de libro.
+
+PUT/api/libros/{id}Actualiza la información de un libro.
+
+DELETE/api/libros/{id}Elimina un libro del catálogo💡 .
+
+Ejemplos de PeticionesCrear un libro (POST /api/libros).
+
 JSON{
   "titulo": "El Aleph",
   "autor": "Jorge Luis Borges",
