@@ -52,7 +52,6 @@ Ejemplos de PeticionesCrear un libro (POST /api/libros).
 JSON{
   "titulo": "El Aleph",
   "autor": "Jorge Luis Borges",
-  "año_publicacion": 1949,
-  "genero": "Ficción"
+  "paginas": 225
 }
 👨‍💻 AutorRodrigo Redel - LinkedIn - GitHub
